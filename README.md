@@ -41,7 +41,7 @@ anthropic_func.add_function(
 # Define the conversation messages
 messages = [{"role": "HUMAN", "content": "how are you today?"}, {"role": "AI", "content": "I'm good, thanks for asking!"}, {"role": "HUMAN", "content": "Remind me what I just asked you?"}, {"role": "AI", "content": "You just asked me, how are you today? and I responded, I'm good, thanks for asking!"}, {"role": "HUMAN", "content": "What's the weather in London?"}]
 
-# Call a function
+# Call the model (it will return either a function or a normal message)
 response = anthropic_func.call(messages, model="claude-2", temperature=0.8, max_tokens_to_sample=400)
 
 if response["function"]:
